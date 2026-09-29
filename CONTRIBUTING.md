@@ -16,7 +16,7 @@ Data, preprocessing and the SVM baseline.
 | 4 | | Check class balance (264 real / 263 false) | ✅ |
 | 5 | Preprocessing | Per-channel standardization (mean / std) | ✅ |
 | 6 | | 70/30 train/eval split with fixed seed | ✅ |
-| 7 | | 10-fold cross validation helper | ❌ |
+| 7 | | 10-fold cross validation helper | ✅ |
 | 8 | EDA | Time domain plots of real vs false impacts | ❌ |
 | 9 | | FFT plots showing frequency content | ❌ |
 | 10 | Baseline | Time and frequency domain feature extraction | ❌ |

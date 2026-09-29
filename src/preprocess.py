@@ -18,3 +18,10 @@ def train_eval_split(X, y, eval_size=0.3, seed=0):
     train_idx = rng.permutation(train_idx)
     eval_idx = rng.permutation(eval_idx)
     return X[train_idx], y[train_idx], X[eval_idx], y[eval_idx]
+
+
+def kfold_splits(y, k=10, seed=0):
+    from sklearn.model_selection import StratifiedKFold
+
+    skf = StratifiedKFold(n_splits=k, shuffle=True, random_state=seed)
+    return list(skf.split(np.zeros(len(y)), y))
