@@ -6,6 +6,8 @@ An instrumented mouthguard records linear acceleration and angular velocity when
 
 Reference: Fanton, Gaudio, Ling, *Neural Network for Detecting Head Impacts from Kinematic Data*, CS229, Stanford.
 
+The authors' original code (linked at the end of their report) is extracted locally under `resources/Project_Code_zip/` and kept out of git. It has `HIKNet.py`, `RecursiveNet.py` and the MATLAB scripts they used for preprocessing and plots. The data files it loads were never shared.
+
 ## Dataset
 
 - 527 samples: 264 real impacts, 263 false positives
