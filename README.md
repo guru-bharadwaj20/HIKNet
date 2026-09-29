@@ -23,7 +23,15 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Put the dataset files inside `data/`. The folder is ignored by git.
+The dataset is not public and is not part of this repo. Put the two files from the Camarillo Lab in `data/` (ignored by git):
+
+```
+data/
+  data.mat     key "data", shape (527, 199, 6)
+  labels.mat   key "label_impact_noimpact", 1 = impact, 0 = no impact
+```
+
+Channel order is lin_acc x, y, z then ang_vel x, y, z. Same layout the original HIKNet code reads.
 
 ## Running
 
