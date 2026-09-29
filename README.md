@@ -35,6 +35,14 @@ data/
 
 Channel order is lin_acc x, y, z then ang_vel x, y, z. Same layout the original HIKNet code reads.
 
+For the SVM baseline we use the feature set Wu et al. (2017) released with their paper (Supplementary Dataset 1, [Sci Rep 8:855](https://www.nature.com/articles/s41598-017-17864-3)). It has 411 features for 387 collegiate training samples (156 impacts, 231 non-impacts) and 32 youth test samples. Download it and save it as `data/wu2017_features.xlsx`:
+
+```bash
+curl -o data/wu2017_features.xlsx "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-017-17864-3/MediaObjects/41598_2017_17864_MOESM2_ESM.xlsx"
+```
+
+`src/features.py` also computes the time domain and PSD part of the same feature set from raw traces, for when `data.mat` is available. The wavelet and head-neck model features are only in the released file.
+
 ## Running
 
 ```bash
