@@ -11,7 +11,7 @@ Data, preprocessing and the SVM baseline.
 | # | Task | Subtask | Status |
 |---|------|---------|:------:|
 | 1 | Repo setup | README, LICENSE, .gitignore, CONTRIBUTING | ✅ |
-| 2 | | Folder structure and `requirements.txt` | ❌ |
+| 2 | | Folder structure and `requirements.txt` | ✅ |
 | 3 | Data loading | Load mouthguard samples into 6 x 199 arrays with labels | ❌ |
 | 4 | | Check class balance (264 real / 263 false) | ❌ |
 | 5 | Preprocessing | Per-channel standardization (mean / std) | ❌ |
