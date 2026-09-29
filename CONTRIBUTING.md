@@ -22,7 +22,7 @@ Data, preprocessing and the SVM baseline.
 | 10 | Baseline | Time and frequency domain feature extraction | ✅ |
 | 11 | | Sequential feature selection | ✅ |
 | 12 | | Train and evaluate SVM | ✅ |
-| 13 | Metrics | Accuracy, precision, specificity, sensitivity, ROC AUC, PR AUC | ❌ |
+| 13 | Metrics | Accuracy, precision, specificity, sensitivity, ROC AUC, PR AUC | ✅ |
 
 ## Part 2: Chukkapalli Rohan (PES1UG24CS135)
 

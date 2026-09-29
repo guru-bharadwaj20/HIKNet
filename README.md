@@ -45,13 +45,32 @@ curl -o data/wu2017_features.xlsx "https://static-content.springer.com/esm/art%3
 
 ## Running
 
+Run from the repo root.
+
+SVM baseline on the Wu et al. features:
+
 ```bash
-python train.py --model hiknet
-python train.py --model svm
-python evaluate.py --model hiknet
+python -m scripts.select_features     # forward selection, writes results/selected_features.json
+python -m scripts.train_svm           # 10-fold cv + youth test set, writes results/svm_metrics.json
 ```
 
-Commands and flags will be updated as the code is added.
+Needs `data/data.mat` and `data/labels.mat`:
+
+```bash
+python -m scripts.check_data          # shapes, class balance, channel ranges
+python -m scripts.plot_eda            # time and frequency plots in figures/
+```
+
+HIKNet commands will be added in part 2.
+
+### SVM baseline results
+
+| | Accuracy | Precision | Specificity | Sensitivity | ROC AUC | PR AUC |
+|---|---|---|---|---|---|---|
+| Collegiate, 10-fold CV (n=387) | 90.2% | 96.8% | 98.3% | 78.2% | 0.978 | 0.970 |
+| Youth test set (n=32) | 96.9% | 100% | 100% | 93.8% | 1.000 | 1.000 |
+
+Wu et al. report 87.2% sensitivity and 93.2% precision with leave-one-out CV. We use 10-fold CV and default RBF settings, so the numbers differ a bit.
 
 ## Metrics
 
