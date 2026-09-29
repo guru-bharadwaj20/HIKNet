@@ -18,7 +18,7 @@ Data, preprocessing and the SVM baseline.
 | 6 | | 70/30 train/eval split with fixed seed | ✅ |
 | 7 | | 10-fold cross validation helper | ✅ |
 | 8 | EDA | Time domain plots of real vs false impacts | ✅ |
-| 9 | | FFT plots showing frequency content | ❌ |
+| 9 | | FFT plots showing frequency content | ✅ |
 | 10 | Baseline | Time and frequency domain feature extraction | ❌ |
 | 11 | | Sequential feature selection | ❌ |
 | 12 | | Train and evaluate SVM | ❌ |
