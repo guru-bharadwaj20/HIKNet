@@ -31,3 +31,9 @@ def load_dataset(data_dir=DATA_DIR):
         raise ValueError(f"{len(X)} samples but {len(y)} labels")
 
     return X, y
+
+
+def class_balance(y):
+    n_impact = int(np.sum(y == 1))
+    n_false = int(np.sum(y == 0))
+    return {"impact": n_impact, "false": n_false, "total": len(y)}
