@@ -6,7 +6,7 @@ An instrumented mouthguard records linear acceleration and angular velocity when
 
 Reference: Fanton, Gaudio, Ling, *Neural Network for Detecting Head Impacts from Kinematic Data*, CS229, Stanford.
 
-The authors' original code (linked at the end of their report) is extracted locally under `resources/Project_Code_zip/` and kept out of git. It has `HIKNet.py`, `RecursiveNet.py` and the MATLAB scripts they used for preprocessing and plots. The data files it loads were never shared.
+The authors' original code (linked at the end of their report) is in `resources/Project_Code_zip/`, along with the report, poster, course guidelines and the Wu et al. (2017) paper. It has `HIKNet.py`, `RecursiveNet.py` and the MATLAB scripts they used for preprocessing and plots. The data files it loads were never shared.
 
 ## Dataset
 
@@ -25,7 +25,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-The dataset is not public and is not part of this repo. Put the two files from the Camarillo Lab in `data/` (ignored by git):
+The dataset is not public and is not part of this repo. Put the two files from the Camarillo Lab in `data/` (`.mat` files are ignored by git):
 
 ```
 data/
@@ -35,11 +35,7 @@ data/
 
 Channel order is lin_acc x, y, z then ang_vel x, y, z. Same layout the original HIKNet code reads.
 
-For the SVM baseline we use the feature set Wu et al. (2017) released with their paper (Supplementary Dataset 1, [Sci Rep 8:855](https://www.nature.com/articles/s41598-017-17864-3)). It has 411 features for 387 collegiate training samples (156 impacts, 231 non-impacts) and 32 youth test samples. Download it and save it as `data/wu2017_features.xlsx`:
-
-```bash
-curl -o data/wu2017_features.xlsx "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-017-17864-3/MediaObjects/41598_2017_17864_MOESM2_ESM.xlsx"
-```
+For the SVM baseline we use the feature set Wu et al. (2017) released with their paper (Supplementary Dataset 1, [Sci Rep 8:855](https://www.nature.com/articles/s41598-017-17864-3)). It has 411 features for 387 collegiate training samples (156 impacts, 231 non-impacts) and 32 youth test samples. It is already in the repo as `data/wu2017_features.xlsx` (published under CC BY 4.0).
 
 `src/features.py` also computes the time domain and PSD part of the same feature set from raw traces, for when `data.mat` is available. The wavelet and head-neck model features are only in the released file.
 

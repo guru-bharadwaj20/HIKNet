@@ -1,0 +1,38 @@
+{
+  "features": [
+    "lin acc y PSD 10Hz",
+    "ang acc y WT 30Hz",
+    "lin acc z PSD 10Hz",
+    "lin acc y PSD 130Hz",
+    "biomech model 37",
+    "biomech model 17",
+    "lin acc y WT 120Hz",
+    "lin acc y PSD 150Hz",
+    "lin acc y PSD 40Hz",
+    "lin acc z WT 4"
+  ],
+  "cv": {
+    "accuracy": 0.9018087855297158,
+    "precision": 0.9682539682539683,
+    "specificity": 0.9826839826839827,
+    "sensitivity": 0.782051282051282,
+    "roc_auc": 0.9783549783549783,
+    "pr_auc": 0.9697811418086273,
+    "tp": 122,
+    "fp": 4,
+    "tn": 227,
+    "fn": 34
+  },
+  "test": {
+    "accuracy": 0.96875,
+    "precision": 1.0,
+    "specificity": 1.0,
+    "sensitivity": 0.9375,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "tp": 15,
+    "fp": 0,
+    "tn": 16,
+    "fn": 1
+  }
+}

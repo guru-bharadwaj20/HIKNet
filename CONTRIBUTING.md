@@ -49,5 +49,5 @@ Starts once Part 1 is merged. Neural networks, tuning and final deliverables.
 - Branch off `main` for each task, e.g. `data-loading`, `hiknet`
 - Keep commits small with clear messages
 - Open a PR and get the other person to look at it before merging
-- Don't commit datasets, model weights or anything in `resources/`
+- Don't commit `.mat` data files or model weights
 - Flip ❌ to ✅ in the table in the same PR that finishes the task

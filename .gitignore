@@ -1,5 +1,3 @@
-resources/
-
 __pycache__/
 *.pyc
 .venv/
@@ -7,9 +5,13 @@ venv/
 .ipynb_checkpoints/
 .env
 
-data/
+resources/*.xlsx
+__MACOSX/
+
+data/*.mat
 *.npy
 *.h5
+*.hdf5
 *.keras
 checkpoints/
 logs/
@@ -18,5 +20,3 @@ logs/
 .idea/
 .DS_Store
 Thumbs.db
-figures/
-results/
