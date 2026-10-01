@@ -55,7 +55,7 @@ Solo project by Guru R Bharadwaj (PES1UG24CS177). Work is split into phases and 
 
 | # | Subtask | Status |
 |---|---------|:------:|
-| 7.1 | Deep 2D conv net with skip concatenations | ❌ |
+| 7.1 | Deep 2D conv net with skip concatenations | ✅ |
 | 7.2 | Compare with HIKNet under 10-fold CV | ❌ |
 
 ## Phase 8: Tuning
