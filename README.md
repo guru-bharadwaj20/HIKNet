@@ -35,7 +35,7 @@ data/
 
 Channel order is lin_acc x, y, z then ang_vel x, y, z. Same layout the original HIKNet code reads.
 
-For the SVM baseline we use the feature set Wu et al. (2017) released with their paper (Supplementary Dataset 1, [Sci Rep 8:855](https://www.nature.com/articles/s41598-017-17864-3)). It has 411 features for 387 collegiate training samples (156 impacts, 231 non-impacts) and 32 youth test samples. It is already in the repo as `data/wu2017_features.xlsx` (published under CC BY 4.0).
+For the SVM baseline I use the feature set Wu et al. (2017) released with their paper (Supplementary Dataset 1, [Sci Rep 8:855](https://www.nature.com/articles/s41598-017-17864-3)). It has 411 features for 387 collegiate training samples (156 impacts, 231 non-impacts) and 32 youth test samples. It is already in the repo as `data/wu2017_features.xlsx` (published under CC BY 4.0).
 
 `src/features.py` also computes the time domain and PSD part of the same feature set from raw traces, for when `data.mat` is available. The wavelet and head-neck model features are only in the released file.
 
@@ -57,7 +57,7 @@ python -m scripts.check_data          # shapes, class balance, channel ranges
 python -m scripts.plot_eda            # time and frequency plots in figures/
 ```
 
-HIKNet commands will be added in part 2.
+HIKNet commands will be added once the network is in.
 
 ### SVM baseline results
 
@@ -66,20 +66,17 @@ HIKNet commands will be added in part 2.
 | Collegiate, 10-fold CV (n=387) | 90.2% | 96.8% | 98.3% | 78.2% | 0.978 | 0.970 |
 | Youth test set (n=32) | 96.9% | 100% | 100% | 93.8% | 1.000 | 1.000 |
 
-Wu et al. report 87.2% sensitivity and 93.2% precision with leave-one-out CV. We use 10-fold CV and default RBF settings, so the numbers differ a bit.
+Wu et al. report 87.2% sensitivity and 93.2% precision with leave-one-out CV. I use 10-fold CV and default RBF settings, so the numbers differ a bit.
 
 ## Metrics
 
 Accuracy, precision, specificity, sensitivity, ROC AUC and PR AUC on the held out set.
 
-## Team
+## Author
 
-| Name | SRN |
-|------|-----|
-| Guru R Bharadwaj | PES1UG24CS177 |
-| Chukkapalli Rohan | PES1UG24CS135 |
+Guru R Bharadwaj (PES1UG24CS177)
 
-Work split is in [CONTRIBUTING.md](CONTRIBUTING.md).
+Progress by phase is tracked in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
