@@ -63,7 +63,7 @@ Solo project by Guru R Bharadwaj (PES1UG24CS177). Work is split into phases and 
 | # | Subtask | Status |
 |---|---------|:------:|
 | 8.1 | Last layer: global avg pool vs global max pool vs dense | ✅ |
-| 8.2 | Sweep filters (15-200), kernel width, dropout (0-0.6) | ❌ |
+| 8.2 | Sweep filters (15-200), kernel width, dropout (0-0.6) | ✅ |
 | 8.3 | Repeat each run 10 times and average | ✅ |
 
 ## Phase 9: Evaluation
