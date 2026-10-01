@@ -35,6 +35,14 @@ data/
 
 Channel order is lin_acc x, y, z then ang_vel x, y, z. Same layout the original HIKNet code reads.
 
+The lab data was never shared, so I generate a synthetic stand-in with the same shape and class balance:
+
+```bash
+python -m scripts.make_mock_data      # writes data/data.mat and data/labels.mat
+```
+
+Real impacts are simulated as damped 18-32 Hz pulses. False positives ring faster and carry more 80-200 Hz energy. 16 samples are drawn from the opposite class so the task is not trivially separable. Every HIKNet number in this repo comes from this mock data.
+
 For the SVM baseline I use the feature set Wu et al. (2017) released with their paper (Supplementary Dataset 1, [Sci Rep 8:855](https://www.nature.com/articles/s41598-017-17864-3)). It has 411 features for 387 collegiate training samples (156 impacts, 231 non-impacts) and 32 youth test samples. It is already in the repo as `data/wu2017_features.xlsx` (published under CC BY 4.0).
 
 `src/features.py` also computes the time domain and PSD part of the same feature set from raw traces, for when `data.mat` is available. The wavelet and head-neck model features are only in the released file.

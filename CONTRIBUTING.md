@@ -17,7 +17,7 @@ Solo project by Guru R Bharadwaj (PES1UG24CS177). Work is split into phases and 
 |---|---------|:------:|
 | 2.1 | Load mouthguard samples into 6 x 199 arrays with labels | ✅ |
 | 2.2 | Check class balance (264 real / 263 false) | ✅ |
-| 2.3 | Mock dataset generator (the lab data was never shared) | ❌ |
+| 2.3 | Mock dataset generator (the lab data was never shared) | ✅ |
 
 ## Phase 3: Preprocessing
 
