@@ -48,7 +48,7 @@ Solo project by Guru R Bharadwaj (PES1UG24CS177). Work is split into phases and 
 | # | Subtask | Status |
 |---|---------|:------:|
 | 6.1 | Two 1D conv + max pool blocks, dropout 0.4 | ✅ |
-| 6.2 | Late 2D conv, global average pooling, sigmoid output | ❌ |
+| 6.2 | Late 2D conv, global average pooling, sigmoid output | ✅ |
 | 6.3 | Early stopping (patience 5), save best epoch | ❌ |
 
 ## Phase 7: RecursiveNet
