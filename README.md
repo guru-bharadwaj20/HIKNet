@@ -65,7 +65,55 @@ python -m scripts.check_data          # shapes, class balance, channel ranges
 python -m scripts.plot_eda            # time and frequency plots in figures/
 ```
 
-HIKNet commands will be added once the network is in.
+HIKNet and RecursiveNet (PyTorch, CPU is fine):
+
+```bash
+python -m scripts.train_hiknet        # 70/30 split, early stopping, weights in checkpoints/hiknet.pt
+python -m scripts.compare_models      # HIKNet vs RecursiveNet, 10-fold cv
+python -m scripts.tune_head           # gap vs gmp vs dense head, 10 repeats each
+python -m scripts.tune_hparams        # filters, kernel width, dropout sweeps, figures/tuning.png
+python -m scripts.evaluate            # final HIKNet vs SVM table on the eval split
+python -m scripts.plot_curves         # figures/roc_curves.png and figures/pr_curves.png
+python -m scripts.demo -n 10          # classify a few random samples with the trained model
+```
+
+The write-up and slides are generated from the result files:
+
+```bash
+python -m scripts.make_writeup        # docs/writeup.pdf
+python -m scripts.make_slides         # docs/slides.pdf
+```
+
+### HIKNet results (mock data)
+
+These come from the synthetic dataset, so they show the pipeline works, not how the model would do on real mouthguard data.
+
+HIKNet vs RecursiveNet, 10-fold cross validation, 30 epochs max (`results/model_comparison.json`):
+
+| Model | Accuracy | Precision | Specificity | Sensitivity | ROC AUC | PR AUC |
+|---|---|---|---|---|---|---|
+| HIKNet | 93.6% | 91.5% | 90.9% | 96.2% | 0.967 | 0.961 |
+| RecursiveNet | 82.0% | 75.8% | 84.8% | 79.3% | 0.882 | 0.902 |
+
+HIKNet wins on every metric with about 28x fewer parameters (0.36M vs 10.1M, most of RecursiveNet's sit in its dense layer).
+
+Tuning, mean ROC AUC over 10 repeats of a 70/30 split (`results/tune_head.json`, `results/tune_hparams.json`):
+
+- Head: global average pooling 0.956, global max pooling 0.943, dense 0.717 (dense often fails to train)
+- Filters 30-200 all land within 0.950-0.956, 15 filters drops to 0.949
+- Kernel width 15 is clearly best (0.956), every other width has unstable runs
+- Dropout 0-0.5 is flat (0.951-0.957), 0.6 starts to hurt
+
+So the original settings (gap head, 150 filters, kernel 15, dropout 0.4) hold up.
+
+Final comparison on the 30% eval split (n=158), from `scripts.evaluate`:
+
+| Model | Accuracy | Precision | Specificity | Sensitivity | ROC AUC | PR AUC |
+|---|---|---|---|---|---|---|
+| HIKNet | 89.9% | 89.9% | 89.9% | 89.9% | 0.950 | 0.923 |
+| SVM (6 selected features) | 75.9% | 87.3% | 91.1% | 60.8% | 0.910 | 0.902 |
+
+HIKNet early stops on the same split it is scored on, so its numbers are a little optimistic.
 
 ### SVM baseline results
 
@@ -79,12 +127,6 @@ Wu et al. report 87.2% sensitivity and 93.2% precision with leave-one-out CV. I 
 ## Metrics
 
 Accuracy, precision, specificity, sensitivity, ROC AUC and PR AUC on the held out set.
-
-## Author
-
-Guru R Bharadwaj (PES1UG24CS177)
-
-Progress by phase is tracked in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
