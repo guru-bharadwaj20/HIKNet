@@ -70,7 +70,7 @@ Solo project by Guru R Bharadwaj (PES1UG24CS177). Work is split into phases and 
 
 | # | Subtask | Status |
 |---|---------|:------:|
-| 9.1 | Final HIKNet vs SVM comparison table | ❌ |
+| 9.1 | Final HIKNet vs SVM comparison table | ✅ |
 | 9.2 | ROC and PR curves | ❌ |
 
 ## Phase 10: Deliverables
