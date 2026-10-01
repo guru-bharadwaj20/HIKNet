@@ -77,7 +77,7 @@ Solo project by Guru R Bharadwaj (PES1UG24CS177). Work is split into phases and 
 
 | # | Subtask | Status |
 |---|---------|:------:|
-| 10.1 | Two page write-up (PDF) | ❌ |
+| 10.1 | Two page write-up (PDF) | ✅ |
 | 10.2 | Slide deck for review | ❌ |
 | 10.3 | Demo script and final README update | ❌ |
 
