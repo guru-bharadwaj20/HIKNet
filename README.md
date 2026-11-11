@@ -1,5 +1,13 @@
 # HIKNet
 
+<p align="center">
+  <a href="HIKNet%20Demo.mp4">
+    <img src="docs/HIKNet%20Demo%20thumbnail.png" alt="Watch the HIKNet demo video" width="720">
+  </a>
+  <br>
+  <sub>▶ <b><a href="HIKNet%20Demo.mp4">Watch the HIKNet demo</a></b> (74 s): the README quick start on a fresh clone, the slide deck it regenerated, and every README result checked against the re-run</sub>
+</p>
+
 **Separating real head impacts from chewing, biting and dropped mouthguards — a convolutional network on raw kinematic traces.**
 
 [![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](requirements.txt)
